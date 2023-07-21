@@ -1,0 +1,71 @@
+<div class="container">
+      <div class="row">
+            <div class="col-md-6">
+                  <div class="card">
+                        <div>
+                              <div class="text-center">
+                                    <h1>Sign up </h1>
+                                    <h6>register now</h6>
+                              </div>
+                              <form [formGroup]="RegisterForm" (ngSubmit)="RegisterSubmit()">
+                                    <div class="my-2">
+                                          <label for="firstName">First Name</label>
+                                          <input type="text" class="form-control" id="firstName"
+                                                formControlName="firstName">
+                                          <div class="text-danger"
+                                                *ngIf="RegisterForm.get('firstName')?.errors != null && RegisterForm.get('firstName')?.touched">
+                                                <span *ngIf="RegisterForm.get('firstName')?.errors?.['required']">first
+                                                      name required*</span>
+                                                <span *ngIf="RegisterForm.get('firstName')?.errors?.['minlength']">first
+                                                      name min length 3*</span>
+                                                <span *ngIf="RegisterForm.get('firstName')?.errors?.['maxlength']">first
+                                                      name max length 10*</span>
+                                          </div>
+                                    </div>
+                                    <div class="my-2">
+                                          <label for="lastName">last Name</label>
+                                          <input type="text" class="form-control" id="lastName"
+                                                formControlName="lastName">
+                                          <div class="text-danger"
+                                                *ngIf="RegisterForm.get('lastName')?.errors != null && RegisterForm.get('lastName')?.touched">
+                                                <span *ngIf="RegisterForm.get('lastName')?.errors?.['required']">Last name
+                                                      required*</span>
+                                                <span *ngIf="RegisterForm.get('lastName')?.errors?.['minlength']">Last name
+                                                      min length 3*</span>
+                                                <span *ngIf="RegisterForm.get('lastName')?.errors?.['maxlength']">Last name
+                                                      max length 10*</span>
+                                          </div>
+                                    </div>
+                                    <div class="my-2">
+                                          <label for="email">email</label>
+                                          <input type="email" class="form-control" id="email" formControlName="email">
+                                          <div class="text-danger"
+                                                *ngIf="RegisterForm.get('email')?.errors != null && RegisterForm.get('email')?.touched">
+                                                <span *ngIf="RegisterForm.get('email')?.errors?.['required']">Email required*
+                                                </span>
+                                                <span *ngIf="RegisterForm.get('email')?.errors?.['email']">Email*</span>
+                                          </div>
+
+                                    </div>
+                                    <div class="my-2">
+                                          <label for="password">password</label>
+                                          <input type="password" class="form-control" id="password"
+                                                formControlName="password">
+                                                <div class="text-danger"
+                                                *ngIf="RegisterForm.get('password')?.errors != null && RegisterForm.get('password')?.touched">
+                                                <span *ngIf="RegisterForm.get('password')?.errors?.['required']">password
+                                                      required*</span>
+                                                <span *ngIf="RegisterForm.get('password')?.errors?.['pattern']">password pattern incorrect*</span>
+                                          </div>
+                                    </div>
+                                    <button class="btn btn-danger" type="submit" [disabled]="RegisterForm.invalid">Sign
+                                          up</button>
+
+                              </form>
+
+                              <a routerLink="/login" class="text-danger">already registered ? login here</a>
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>

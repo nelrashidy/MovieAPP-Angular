@@ -1,0 +1,32 @@
+{
+  "signUpUser": [
+    {
+      "firstName": "nour",
+      "lastName": "ehab",
+      "email": "nour@gmail.com",
+      "password": "Nour@123",
+      "id": 1
+    },
+    {
+      "firstName": "Nahla",
+      "lastName": "Mohamed",
+      "email": "nahla@gmail.com",
+      "password": "Nahla@55",
+      "id": 2
+    },
+    {
+      "firstName": "Ahmed",
+      "lastName": "Mohamed",
+      "email": "Ahmed@gmail.com",
+      "password": "A@123",
+      "id": 3
+    },
+    {
+      "firstName": "ehab",
+      "lastName": "elrashidy",
+      "email": "ehab@hotmail.com",
+      "password": "pass123",
+      "id": 4
+    }
+  ]
+}

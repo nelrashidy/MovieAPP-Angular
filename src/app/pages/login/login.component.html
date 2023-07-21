@@ -1,0 +1,45 @@
+<div class="container">
+      <div class="row">
+            <div class="col-md-6">
+                  <div class="card">
+                        <div>
+                              <div class="text-center">
+                                    <h1>login</h1>
+                              </div>
+                              <form [formGroup]="loginForm" (ngSubmit)="login()">
+                                    <div class="my-2">
+                                          <label for="email">email</label>
+                                          <input type="text" class="form-control" id="email" formControlName="email">
+                                          <div class="text-danger"
+                                                *ngIf="loginForm.get('email')?.errors != null && loginForm.get('email')?.touched">
+                                                <span *ngIf="loginForm.get('email')?.errors?.['required']">Email required*
+                                                </span>
+                                                <span *ngIf="loginForm.get('email')?.errors?.['email']">Email*</span>
+                                          </div>
+
+                                    </div>
+                                    <div class="my-2">
+                                          <label for="password">password</label>
+                                          <input type="password" class="form-control" id="password"
+                                                formControlName="password">
+                                          <div class="text-danger"
+                                                *ngIf="loginForm.get('password')?.errors != null && loginForm.get('password')?.touched">
+                                                <span *ngIf="loginForm.get('password')?.errors?.['required']">password
+                                                      required*</span>
+                                                <span *ngIf="loginForm.get('password')?.errors?.['pattern']">password pattern incorrect*</span>
+                                          </div>
+
+                                    </div>
+
+                                    <button class="btn btn-danger" type="submit"
+                                          [disabled]="loginForm.invalid">Login</button>
+
+                              </form>
+
+                              <a routerLink="/register" class="text-danger">new user? register here</a>
+
+                        </div>
+                  </div>
+            </div>
+      </div>
+</div>

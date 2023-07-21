@@ -1,0 +1,47 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+      <div class="row p-5">
+            <div class="col-lg-4" *ngIf="movieDetailsResult.poster_path">
+                  <img [src]="prefixImg+movieDetailsResult.poster_path" class="d-block w-100" alt="...">
+            </div>
+            <div class="col-lg-8 gy-2">
+                  <div class="movie-detail p-3">
+                        <h1 class="my-2">{{movieDetailsResult.title}} <span class="title-date">({{movieDetailsResult.release_date | slice:0:-6}})</span></h1>
+                        <h2 class="my-3">Released on : {{movieDetailsResult.release_date}}</h2>
+                        <p class="my-4">{{movieDetailsResult.overview}}</p>
+                        <div class="tags">
+                              <span class="tag">{{movieDetailsResult.genres[0].name}}</span>
+                              <span class="tag">{{movieDetailsResult.genres[1].name}}</span>
+                              <span class="tag">{{movieDetailsResult.genres[2].name}}</span>
+                        </div>
+
+                        <h2 class="my-3">Rating : {{movieDetailsResult.vote_average}}</h2>
+                        <a class="btn " href="https://www.themoviedb.org/video/play?key={{movieVidResult}}"
+                              target="_blank">watch trailer</a>
+                  </div>
+            </div>
+
+            <div class="col-md-12 gy-2">
+                  <div class="container mt-3">
+                        <h3 class="my-4">top cast</h3>
+                        <div class="row">
+                              <div class="col-md-6" *ngFor="let c of movieCastResult ">
+                                    <div class="row mb-2">
+                                          <div class="col-lg-2" *ngIf="c.profile_path">
+                                                <img [src]="prefixImg+c.profile_path" class="d-block w-100" alt="...">
+                                          </div>
+                                          <div class="col-lg-6">
+                                                <h5>{{c.original_name}}</h5>
+                                                <p class="charc">{{c.character}}</p>
+                                          </div>
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+            </div>
+            
+
+      </div>
+</div>

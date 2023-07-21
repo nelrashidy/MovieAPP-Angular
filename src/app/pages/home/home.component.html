@@ -1,0 +1,288 @@
+<app-navbar></app-navbar>
+
+<!-- banner -->
+<div class="">
+      <div id="carouselExampleDark" class="carousel carousel-dark slide">
+            <div class="carousel-inner">
+                  <div class="carousel-item active" data-bs-interval="10000" *ngFor="let b of bannerResult;let i=index"
+                        [ngClass]="{active:i===1}">
+                        <img [src]="prefixImg+b.backdrop_path" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-md-block">
+                              <h2>{{b.title}} {{b.name}}</h2>
+                              <p>{{b.overview}}</p>
+                        </div>
+                  </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                  data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+            </button>
+      </div>
+</div>
+<!-- banner -->
+
+<!-- <div class="container-fluid mt-3 p-3">
+      <div class="row">
+            <h5 class="text-white">Trending Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let t of trendingResult">
+                        <img [src]="prefixImg+t.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',t.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Action Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let a of actionResult">
+                        <img [src]="prefixImg+a.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',a.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Thriller Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let th of thrillerResult">
+                        <img [src]="prefixImg+th.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',th.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Comedy Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let c of comedyResult">
+                        <img [src]="prefixImg+c.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',c.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Animation Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let a of animeResult">
+                        <img [src]="prefixImg+a.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',a.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Sci-Fi Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let s of scifiResult">
+                        <img [src]="prefixImg+s.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',s.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Adventure Movies</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let a of adventureResult">
+                        <img [src]="prefixImg+a.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',a.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+      <div class="row mt-2">
+            <h5 class="text-white">Documentries</h5>
+            <div class="row-poster mt-2 p-2">
+                  <ng-container *ngFor="let d of documentriesResult">
+                        <img [src]="prefixImg+d.poster_path" class="row-img large-poster" alt="..."
+                              [routerLink]="['/movie',d.id]">
+                  </ng-container>
+            </div>
+
+      </div>
+
+</div> -->
+
+<div class="container-fluid mt-3 p-3">
+      <div class="row g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+                  <div class="w-25 brdr"></div>
+                  <h2 class="my-5">Trending Movies to watch right now</h2>
+                  <div class="w-75 brdr"></div>
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let t of  trendingResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',t.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+t.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{t.title}}</h1>
+                              <h2> Released on : {{t.release_date}}</h2>
+                              <p> {{t.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',t.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{t.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="row mt-2 g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+                  <div class="w-25 brdr"></div>
+                  <h2 class="my-5">Action Movies</h2>
+                  <div class="w-75 brdr"></div>
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let a of  actionResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',a.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+a.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{a.title}} </h1>
+                              <h2> Released on : {{a.release_date}}</h2>
+                              <p> {{a.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',a.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{a.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="row mt-2 g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+                  <div class="w-25 brdr"></div>
+                  <h2 class="my-5">Comedy Movies</h2>
+                  <div class="w-75 brdr"></div>
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let c of  comedyResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',c.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+c.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{c.title}}</h1>
+                              <h2> Released on : {{c.release_date}}</h2>
+                              <p> {{c.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',c.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{c.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="row mt-2 g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+                  <div class="w-25 brdr"></div>
+                  <h2 class="my-5">Animation Movies</h2>
+                  <div class="w-75 brdr"></div>
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let a of  animeResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',a.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+a.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{a.title}}</h1>
+                              <h2> Released on : {{a.release_date}}</h2>
+                              <p> {{a.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',a.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{a.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <div class="row mt-2 g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+                  <div class="w-25 brdr"></div>
+                  <h2 class="my-5">Sci-Fi Movies</h2>
+                  <div class="w-75 brdr"></div>
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let s of  scifiResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',s.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+s.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{s.title}}</h1>
+                              <h2> Released on : {{s.release_date}}</h2>
+                              <p> {{s.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',s.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{s.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+      <div class="row mt-2 g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+                  <div class="w-25 brdr"></div>
+                  <h2 class="my-5">Adventure Movies</h2>
+                  <div class="w-75 brdr"></div>
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let a of  adventureResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',a.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+a.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{a.title}}</h1>
+                              <h2> Released on : {{a.release_date}}</h2>
+                              <p> {{a.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',a.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{a.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+      <div class="row mt-2 g-3">
+            <div
+                  class="col-xl-2 col-md-4 py-5 d-flex justify-content-center align-items-center flex-column text-center">
+
+                  <h2 class="my-5">Documentries</h2>
+
+            </div>
+            <div class="col-xl-2 col-md-4" *ngFor="let d of  documentriesResult">
+                  <div class="position-relative movie" [routerLink]="['/movie',d.id]">
+                        <div class="poster">
+                              <img [src]="prefixImg+d.poster_path" class="w-100" alt="">
+                        </div>
+                        <div class="desc">
+                              <h1>{{d.title}}</h1>
+                              <h2> Released on : {{d.release_date}}</h2>
+                              <p> {{d.overview | slice:0:150}}...</p>
+                              <a class="btn butn" [routerLink]="['/movie',d.id]">See More</a>
+                        </div>
+                        <div class="position-absolute top-0 end-0 px-4 py-2 rating">
+                              {{d.vote_average}}
+                        </div>
+                  </div>
+            </div>
+      </div>
+
+</div>

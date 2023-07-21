@@ -1,0 +1,22 @@
+.not-found a {
+      background-color: #a5050d;
+      padding: 8px 15px;
+      color: #Ffffff;
+}
+.not-found a:hover {
+      background-color:  #85030a;
+      color: #Ffffff;
+}
+
+.not-found {
+      text-align: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+}
+
+.not-found h1 {
+      font-size: 15rem;
+      color: #a5050d;
+}

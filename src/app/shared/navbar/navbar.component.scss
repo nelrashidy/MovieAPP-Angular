@@ -1,0 +1,25 @@
+$brandColor : #cd0711e1;
+$bgColor : #0a0a0a;
+
+
+// navbar
+.bg-body-tertiary {
+      background-color: $bgColor !important;
+}
+
+.navbar {
+      .navbar-brand {
+            color: $brandColor;
+            font-weight: bold;
+      }
+
+      .navbar-nav {
+            .nav-item {
+                  cursor: pointer;
+                  .nav-link{
+                        color: $brandColor;
+
+                  }
+            }
+      }
+}

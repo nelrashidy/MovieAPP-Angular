@@ -1,0 +1,52 @@
+h1 {
+      color: #a5050d;
+      font-size: 3.2em;
+      font-weight: bold;
+}
+
+p {
+      color: #ffffff;
+}
+
+a {
+      background-color: #a5050d;
+      color: #ffffff;
+      text-decoration: none;
+}
+
+a:hover {
+      background-color: #85030a;
+      color: #ffffff;
+}
+
+h2,
+.charc {
+      font-weight: 400;
+      font-size: 1em;
+      margin-bottom: 10px;
+      opacity: .6;
+}
+
+.title-date {
+      font-weight: 400;
+      color: #ffffffb0;
+      font-size: 1em;
+}
+
+.tags {
+      display: flex;
+      gap: .375em;
+      margin-bottom: .875em;
+      font-size: .85em;
+}
+
+.tags span {
+      padding: .35rem .65rem;
+      color: #fff;
+      border: 1.5px solid rgba(255 255 255 / 0.4);
+      border-radius: 4px;
+      border-radius: 50px;
+}
+
+
+

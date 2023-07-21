@@ -1,0 +1,26 @@
+$brandColor : #e50914;
+$brandColor2 : #c60710;
+
+
+button {
+      background-color: $brandColor;
+      color: #ffffff;
+}
+
+button:hover {
+      background-color: $brandColor2;
+      color: #ffffff;
+}
+
+h5 {
+      color: #ffffff;
+}
+
+p{
+      color: #ffffffcf;
+      font-weight: 300;
+}
+
+img{
+      cursor: pointer;
+}
